@@ -220,6 +220,8 @@ transform:scale(.95);
 
 
 
+
+
 /* CARTA */
 
 .carta{
@@ -272,7 +274,85 @@ overflow-y:auto;
 
 display:flex;
 
+animation:abrirCarta .6s ease forwards;
+
 }
+
+
+
+
+/* NOVO EFEITO DE ABERTURA */
+
+@keyframes abrirCarta{
+
+
+0%{
+
+opacity:0;
+
+transform:scale(.85);
+
+}
+
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+
+}
+
+
+
+
+
+/* brilho no topo */
+
+.carta::before{
+
+content:"✨";
+
+position:absolute;
+
+top:25px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:38px;
+
+animation:brilho 1.5s infinite alternate;
+
+}
+
+
+
+@keyframes brilho{
+
+
+from{
+
+opacity:.4;
+
+}
+
+
+to{
+
+opacity:1;
+
+}
+
+
+}
+
+
+
 
 
 
@@ -280,7 +360,34 @@ display:flex;
 
 margin-top:20px;
 
+animation:coracaoCarta 1s infinite alternate;
+
 }
+
+
+
+
+@keyframes coracaoCarta{
+
+
+from{
+
+transform:scale(1);
+
+}
+
+
+to{
+
+transform:scale(1.18);
+
+}
+
+
+}
+
+
+
 
 
 
@@ -321,6 +428,19 @@ padding:0 15px;
 
 
 
+
+
+.carta{
+
+box-shadow:inset 0 0 40px rgba(255,80,150,.25);
+
+}
+
+
+
+
+
+
 .fechar{
 
 background:#555;
@@ -332,6 +452,9 @@ padding:14px 35px;
 margin-bottom:30px;
 
 }
+
+
+
 
 
 
@@ -385,7 +508,10 @@ font-size:16px;
 
 
 
+
+
 <body>
+
 
 
 
@@ -405,6 +531,7 @@ font-size:16px;
 
 
 
+
 <div class="container">
 
 
@@ -417,11 +544,13 @@ font-size:16px;
 
 
 
+
 <h1>
 
 Feliz Dia dos Namorados ❤️
 
 </h1>
+
 
 
 
@@ -433,11 +562,13 @@ Geovana
 
 
 
+
 <p>
 
 Preparei essa surpresa simples, mas feita com carinho pra você.
 
 </p>
+
 
 
 
@@ -459,6 +590,7 @@ Abrir Carta 💕
 
 
 
+
 <div class="carta" id="carta">
 
 
@@ -472,11 +604,13 @@ Abrir Carta 💕
 
 
 
+
 <h2>
 
 Meu amor,
 
 </h2>
+
 
 
 
@@ -530,11 +664,14 @@ Te amo, tá?! ❤️
 
 
 
+
+
 <button class="fechar" onclick="fecharCarta()">
 
 Fechar Carta
 
 </button>
+
 
 
 
@@ -546,7 +683,9 @@ Fechar Carta
 
 
 
+
 <script>
+
 
 
 function abrirCarta(){
@@ -558,6 +697,8 @@ document
 
 
 }
+
+
 
 
 
@@ -573,7 +714,11 @@ document
 
 
 
+
+
 </script>
+
+
 
 
 
