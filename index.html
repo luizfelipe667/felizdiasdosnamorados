@@ -6,38 +6,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Geovana ❤️</title>
+<title>Feliz Aniversário 🎂</title>
+
 
 <style>
 
 body{
-    margin:0;
-    height:100vh;
-    background:#ffe6ec;
-    font-family:Arial, Helvetica, sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
 
+margin:0;
+height:100vh;
 
-.tela{
+background:#fff3cd;
 
-    width:90%;
-    max-width:500px;
-    background:white;
-    padding:40px 25px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+font-family:Arial, Helvetica, sans-serif;
+
+display:flex;
+justify-content:center;
+align-items:center;
 
 }
+
+
+.container{
+
+width:90%;
+max-width:500px;
+
+background:white;
+
+padding:40px 25px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
 
 
 h1{
 
-    color:#e91e63;
-    font-size:28px;
+color:#ff9800;
+
+font-size:32px;
+
+}
+
+
+
+h2{
+
+color:#e91e63;
 
 }
 
@@ -45,9 +66,11 @@ h1{
 
 p{
 
-    color:#555;
-    font-size:18px;
-    line-height:1.6;
+font-size:18px;
+
+color:#555;
+
+line-height:1.6;
 
 }
 
@@ -55,14 +78,23 @@ p{
 
 button{
 
-    margin-top:25px;
-    padding:15px 30px;
-    border:none;
-    border-radius:30px;
-    background:#e91e63;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
+margin-top:25px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:30px;
+
+background:#ff9800;
+
+color:white;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
 
 }
 
@@ -70,60 +102,71 @@ button{
 
 button:hover{
 
-    background:#c2185b;
+background:#f57c00;
 
 }
 
 
 
-/* CARTA */
+/* tela da mensagem */
 
-.carta{
+.mensagem{
 
-    display:none;
 
-    position:fixed;
+display:none;
 
-    top:0;
-    left:0;
 
-    width:100%;
-    height:100%;
+position:fixed;
 
-    background:#fff;
+top:0;
+left:0;
 
-    padding:30px;
 
-    text-align:center;
+width:100%;
+height:100%;
 
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+
+background:#fff8e1;
+
+
+padding:30px;
+
+
+text-align:center;
+
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
 
 }
 
 
 
-.carta.aberta{
+.mensagem.abrir{
 
-    display:flex;
-
-}
-
-
-
-.carta h2{
-
-    color:#e91e63;
-    font-size:30px;
+display:flex;
 
 }
 
 
 
-.carta p{
+.mensagem h2{
 
-    max-width:600px;
+font-size:32px;
+
+color:#ff9800;
+
+}
+
+
+
+.mensagem p{
+
+max-width:600px;
 
 }
 
@@ -131,42 +174,53 @@ button:hover{
 
 .fechar{
 
-    background:#555;
+background:#555;
 
 }
 
 
+
 </style>
 
+
 </head>
+
 
 
 <body>
 
 
 
-<div class="tela">
+<div class="container">
 
 
 <h1>
-Feliz Dia dos Namorados, Geovana ❤️
+
+🎂 Feliz Aniversário! 🎂
+
 </h1>
+
+
+
+<h2>
+
+Para Geovana ❤️
+
+</h2>
 
 
 
 <p>
 
-Eu fiz esse pequeno site para você.
-
-Tenho muito carinho por você e queria deixar uma mensagem especial.
+Hoje é um dia especial, porque é o dia de celebrar uma pessoa incrível.
 
 </p>
 
 
 
-<button onclick="abrirCarta()">
+<button onclick="abrirMensagem()">
 
-Abrir Carta 💌
+Abrir Mensagem 🎁
 
 </button>
 
@@ -178,12 +232,14 @@ Abrir Carta 💌
 
 
 
-<div class="carta" id="carta">
+
+<div class="mensagem" id="mensagem">
+
 
 
 <h2>
 
-Minha Querida Geovana,
+Parabéns, Geovana! 🎉
 
 </h2>
 
@@ -192,24 +248,25 @@ Minha Querida Geovana,
 <p>
 
 
-Neste Dia dos Namorados eu queria dizer que você é uma pessoa muito especial para mim.
+Que seu dia seja cheio de alegria, sorrisos e momentos inesquecíveis.
 
-Obrigado por todos os momentos, conversas e por fazer parte da minha vida.
+Que você continue sendo essa pessoa especial, com esse jeito único que encanta.
 
-Que possamos continuar criando boas lembranças juntos.
+Desejo muita felicidade, saúde e que todos os seus sonhos se realizem.
 
-Eu te amo ❤️
+Aproveite muito seu dia! ❤️
 
 
 </p>
 
 
 
-<button class="fechar" onclick="fecharCarta()">
+<button class="fechar" onclick="fecharMensagem()">
 
-Fechar Carta
+Voltar
 
 </button>
+
 
 
 </div>
@@ -218,25 +275,33 @@ Fechar Carta
 
 
 
+
+
 <script>
 
 
-function abrirCarta(){
+function abrirMensagem(){
 
-document.getElementById("carta").classList.add("aberta");
+document
+.getElementById("mensagem")
+.classList.add("abrir");
+
+}
+
+
+
+function fecharMensagem(){
+
+document
+.getElementById("mensagem")
+.classList.remove("abrir");
 
 }
 
-
-
-function fecharCarta(){
-
-document.getElementById("carta").classList.remove("aberta");
-
-}
 
 
 </script>
+
 
 
 
