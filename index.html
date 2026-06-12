@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Feliz Dia dos Namorados, Geovana!</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffccd5, #ff4d6d);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+}
+
+
+.hearts-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.heart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #ff6f91;
+  transform: rotate(-45deg);
+  animation: floatUp 7s linear infinite;
+  opacity: .7;
+}
+
+
+.heart::before,
+.heart::after {
+  content:"";
+  position:absolute;
+  width:30px;
+  height:30px;
+  background:#ff6f91;
+  border-radius:50%;
+}
+
+
+.heart::before {
+ top:-15px;
+ left:0;
+}
+
+
+.heart::after {
+ top:0;
+ left:15px;
+}
+
+
+@keyframes floatUp {
+
+0% {
+ transform: translateY(100vh) rotate(-45deg);
+ opacity:.8;
+}
+
+100% {
+ transform: translateY(-50px) rotate(-45deg);
+ opacity:0;
+}
+
+}
+
+
+
+.content-layer {
+ position:relative;
+ z-index:2;
+ height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ padding:20px;
+}
+
+
+h1 {
+ font-size:3rem;
+ text-shadow:0 0 10px #ff2e63;
+}
+
+
+
+.btn {
+ margin-top:30px;
+ padding:15px 35px;
+ background:#ff2e63;
+ border:none;
+ border-radius:30px;
+ color:white;
+ font-size:18px;
+ font-weight:bold;
+ cursor:pointer;
+ box-shadow:0 0 20px #ff2e63;
+ transition:.3s;
+}
+
+
+.btn:hover {
+ transform:scale(1.1);
+}
+
+
+
+.envelope {
+
+position:fixed;
+top:50%;
+left:50%;
+
+width:320px;
+max-width:90%;
+
+background:#fff0f3;
+color:#b3344a;
+
+border-radius:15px;
+
+transform:translate(-50%,-50%) scale(0);
+opacity:0;
+
+visibility:hidden;
+
+padding:25px;
+
+z-index:10;
+
+box-shadow:0 0 30px rgba(255,0,80,.6);
+
+transition:.4s;
+
+text-align:center;
+
+}
+
+
+
+.envelope.open {
+
+transform:translate(-50%,-50%) scale(1);
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+
+
+.envelope h2 {
+
+color:#d6336c;
+
+}
+
+
+
+.envelope p {
+
+font-size:18px;
+
+line-height:1.5;
+
+}
+
+
+
+.close-btn {
+
+background:#ff4e73;
+border:none;
+padding:10px 25px;
+border-radius:20px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="hearts-layer">
+
+<div class="heart" style="left:10%;animation-delay:0s"></div>
+<div class="heart" style="left:20%;animation-delay:1s"></div>
+<div class="heart" style="left:30%;animation-delay:2s"></div>
+<div class="heart" style="left:40%;animation-delay:3s"></div>
+<div class="heart" style="left:50%;animation-delay:4s"></div>
+<div class="heart" style="left:60%;animation-delay:2.5s"></div>
+<div class="heart" style="left:70%;animation-delay:1.5s"></div>
+<div class="heart" style="left:80%;animation-delay:5s"></div>
+<div class="heart" style="left:90%;animation-delay:3.5s"></div>
+
+</div>
+
+
+
+<div class="content-layer">
+
+
+<h1>
+Feliz Dia dos Namorados, Geovana! ❤️
+</h1>
+
+
+<button class="btn" id="openLetterBtn">
+Abra a Carta 💌
+</button>
+
+
+</div>
+
+
+
+
+<div class="envelope" id="letter">
+
+
+<h2>
+Minha Querida Geovana,
+</h2>
+
+
+<p>
+
+Neste Dia dos Namorados, queria que você soubesse o quanto você é especial na minha vida.
+
+Que nosso amor floresça cada dia mais, trazendo alegria, cumplicidade e sonhos realizados.
+
+Eu te amo demais! ❤️
+
+</p>
+
+
+
+<button class="close-btn" id="closeLetterBtn">
+Fechar Carta
+</button>
+
+
+</div>
+
+
+
+
+<script>
+
+
+const openBtn = document.getElementById("openLetterBtn");
+
+const closeBtn = document.getElementById("closeLetterBtn");
+
+const letter = document.getElementById("letter");
+
+
+
+openBtn.onclick = function(){
+
+letter.classList.add("open");
+
+};
+
+
+
+closeBtn.onclick = function(){
+
+letter.classList.remove("open");
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
