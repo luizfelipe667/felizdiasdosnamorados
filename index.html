@@ -6,41 +6,117 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Feliz Aniversário 🎂</title>
+<title>Dia dos Namorados ❤️</title>
 
 
 <style>
 
+
+*{
+box-sizing:border-box;
+}
+
+
+
 body{
 
 margin:0;
+
 height:100vh;
 
-background:#fff3cd;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 
 font-family:Arial, Helvetica, sans-serif;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
+overflow:hidden;
 
 }
 
 
+
+/* corações de fundo */
+
+.coracao{
+
+position:absolute;
+
+font-size:25px;
+
+animation: subir 8s linear infinite;
+
+opacity:.7;
+
+}
+
+
+
+@keyframes subir{
+
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+
 .container{
 
+
 width:90%;
+
 max-width:500px;
+
 
 background:white;
 
+
 padding:40px 25px;
+
 
 border-radius:25px;
 
+
 text-align:center;
 
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+box-shadow:0 0 30px rgba(255,0,80,.35);
+
+
+position:relative;
+
+z-index:2;
+
 
 }
 
@@ -48,9 +124,11 @@ box-shadow:0 10px 30px rgba(0,0,0,.15);
 
 h1{
 
-color:#ff9800;
+
+color:#e91e63;
 
 font-size:32px;
+
 
 }
 
@@ -58,7 +136,9 @@ font-size:32px;
 
 h2{
 
-color:#e91e63;
+
+color:#ff4d6d;
+
 
 }
 
@@ -66,51 +146,69 @@ color:#e91e63;
 
 p{
 
+
 font-size:18px;
 
 color:#555;
 
 line-height:1.6;
 
+
 }
+
 
 
 
 button{
 
+
 margin-top:25px;
+
 
 padding:15px 35px;
 
+
 border:none;
+
 
 border-radius:30px;
 
-background:#ff9800;
+
+background:#e91e63;
+
 
 color:white;
 
+
 font-size:18px;
+
 
 font-weight:bold;
 
+
 cursor:pointer;
 
+
+box-shadow:0 0 20px rgba(233,30,99,.5);
+
+
 }
 
 
 
-button:hover{
+button:active{
 
-background:#f57c00;
+transform:scale(.95);
 
 }
 
 
 
-/* tela da mensagem */
 
-.mensagem{
+
+/* carta */
+
+.carta{
 
 
 display:none;
@@ -118,15 +216,20 @@ display:none;
 
 position:fixed;
 
+
 top:0;
+
+
 left:0;
 
 
 width:100%;
+
+
 height:100%;
 
 
-background:#fff8e1;
+background:#fff5f7;
 
 
 padding:30px;
@@ -137,44 +240,101 @@ text-align:center;
 
 flex-direction:column;
 
+
 justify-content:center;
+
 
 align-items:center;
 
 
+z-index:5;
+
+
 }
 
 
 
-.mensagem.abrir{
+.carta.abrir{
+
 
 display:flex;
 
+
 }
 
 
 
-.mensagem h2{
+
+.carta h2{
+
 
 font-size:32px;
 
-color:#ff9800;
+
+color:#e91e63;
+
 
 }
 
 
 
-.mensagem p{
 
-max-width:600px;
+.carta p{
+
+
+max-width:650px;
+
+
+font-size:20px;
+
 
 }
+
 
 
 
 .fechar{
 
+
 background:#555;
+
+
+}
+
+
+
+
+.emoji{
+
+
+font-size:55px;
+
+margin-bottom:20px;
+
+
+animation:pulsar 1s infinite alternate;
+
+
+}
+
+
+
+@keyframes pulsar{
+
+
+from{
+
+transform:scale(1);
+
+}
+
+
+to{
+
+transform:scale(1.2);
+
+}
+
 
 }
 
@@ -186,17 +346,38 @@ background:#555;
 </head>
 
 
-
 <body>
+
+
+
+<div class="coracao" style="left:10%;animation-delay:0s">❤️</div>
+
+<div class="coracao" style="left:25%;animation-delay:2s">💗</div>
+
+<div class="coracao" style="left:45%;animation-delay:4s">❤️</div>
+
+<div class="coracao" style="left:70%;animation-delay:1s">💖</div>
+
+<div class="coracao" style="left:85%;animation-delay:3s">❤️</div>
+
+
 
 
 
 <div class="container">
 
 
+<div class="emoji">
+
+💌
+
+</div>
+
+
+
 <h1>
 
-🎂 Feliz Aniversário! 🎂
+Feliz Dia dos Namorados ❤️
 
 </h1>
 
@@ -204,7 +385,7 @@ background:#555;
 
 <h2>
 
-Para Geovana ❤️
+Para Geovana
 
 </h2>
 
@@ -212,17 +393,18 @@ Para Geovana ❤️
 
 <p>
 
-Hoje é um dia especial, porque é o dia de celebrar uma pessoa incrível.
+Preparei uma surpresa simples, mas feita com muito carinho.
 
 </p>
 
 
 
-<button onclick="abrirMensagem()">
+<button onclick="abrirCarta()">
 
-Abrir Mensagem 🎁
+Abrir Carta 💕
 
 </button>
+
 
 
 </div>
@@ -233,13 +415,22 @@ Abrir Mensagem 🎁
 
 
 
-<div class="mensagem" id="mensagem">
+
+<div class="carta" id="carta">
+
+
+
+<div class="emoji">
+
+❤️
+
+</div>
 
 
 
 <h2>
 
-Parabéns, Geovana! 🎉
+Minha Querida Geovana,
 
 </h2>
 
@@ -248,22 +439,24 @@ Parabéns, Geovana! 🎉
 <p>
 
 
-Que seu dia seja cheio de alegria, sorrisos e momentos inesquecíveis.
+Neste Dia dos Namorados eu queria lembrar o quanto você é importante para mim.
 
-Que você continue sendo essa pessoa especial, com esse jeito único que encanta.
+Cada momento, conversa e sorriso fazem parte de uma história que eu gosto muito de viver.
 
-Desejo muita felicidade, saúde e que todos os seus sonhos se realizem.
+Que nunca falte carinho, felicidade e motivos para sorrirmos juntos.
 
-Aproveite muito seu dia! ❤️
+Obrigado por fazer parte da minha vida.
+
+Eu te amo ❤️
 
 
 </p>
 
 
 
-<button class="fechar" onclick="fecharMensagem()">
+<button class="fechar" onclick="fecharCarta()">
 
-Voltar
+Fechar Carta
 
 </button>
 
@@ -280,28 +473,31 @@ Voltar
 <script>
 
 
-function abrirMensagem(){
+function abrirCarta(){
+
 
 document
-.getElementById("mensagem")
+.getElementById("carta")
 .classList.add("abrir");
+
 
 }
 
 
 
-function fecharMensagem(){
+function fecharCarta(){
+
 
 document
-.getElementById("mensagem")
+.getElementById("carta")
 .classList.remove("abrir");
+
 
 }
 
 
 
 </script>
-
 
 
 
