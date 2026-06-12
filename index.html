@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dia dos Namorados ❤️</title>
@@ -40,7 +41,7 @@ overflow:hidden;
 
 
 
-/* corações de fundo */
+/* CORAÇÕES */
 
 .coracao{
 
@@ -48,12 +49,11 @@ position:absolute;
 
 font-size:25px;
 
-animation: subir 8s linear infinite;
+animation:subir 8s linear infinite;
 
 opacity:.7;
 
 }
-
 
 
 @keyframes subir{
@@ -90,6 +90,8 @@ opacity:0;
 
 
 
+/* TELA INICIAL */
+
 .container{
 
 
@@ -122,13 +124,42 @@ z-index:2;
 
 
 
-h1{
+.emoji{
 
+font-size:55px;
+
+margin-bottom:20px;
+
+animation:pulsar 1s infinite alternate;
+
+}
+
+
+
+@keyframes pulsar{
+
+from{
+
+transform:scale(1);
+
+}
+
+
+to{
+
+transform:scale(1.15);
+
+}
+
+}
+
+
+
+h1{
 
 color:#e91e63;
 
 font-size:32px;
-
 
 }
 
@@ -136,9 +167,7 @@ font-size:32px;
 
 h2{
 
-
 color:#ff4d6d;
-
 
 }
 
@@ -146,54 +175,39 @@ color:#ff4d6d;
 
 p{
 
-
 font-size:18px;
 
 color:#555;
 
 line-height:1.6;
 
-
 }
-
 
 
 
 button{
 
-
 margin-top:25px;
-
 
 padding:15px 35px;
 
-
 border:none;
-
 
 border-radius:30px;
 
-
 background:#e91e63;
-
 
 color:white;
 
-
 font-size:18px;
-
 
 font-weight:bold;
 
-
 cursor:pointer;
-
 
 box-shadow:0 0 20px rgba(233,30,99,.5);
 
-
 }
-
 
 
 button:active{
@@ -206,7 +220,7 @@ transform:scale(.95);
 
 
 
-/* carta */
+/* CARTA */
 
 .carta{
 
@@ -216,15 +230,12 @@ display:none;
 
 position:fixed;
 
-
 top:0;
-
 
 left:0;
 
 
 width:100%;
-
 
 height:100%;
 
@@ -232,7 +243,7 @@ height:100%;
 background:#fff5f7;
 
 
-padding:30px;
+padding:25px;
 
 
 text-align:center;
@@ -241,7 +252,7 @@ text-align:center;
 flex-direction:column;
 
 
-justify-content:center;
+justify-content:flex-start;
 
 
 align-items:center;
@@ -250,90 +261,117 @@ align-items:center;
 z-index:5;
 
 
+overflow-y:auto;
+
+
 }
 
 
 
 .carta.abrir{
 
-
 display:flex;
-
 
 }
 
+
+
+.carta .emoji{
+
+margin-top:20px;
+
+}
 
 
 
 .carta h2{
 
-
-font-size:32px;
-
+font-size:34px;
 
 color:#e91e63;
 
+margin:10px 0;
 
 }
-
 
 
 
 .carta p{
 
 
-max-width:650px;
+max-width:700px;
 
 
 font-size:20px;
 
 
-}
+line-height:1.8;
 
+
+color:#555;
+
+
+margin:15px auto;
+
+
+padding:0 15px;
+
+
+}
 
 
 
 .fechar{
 
-
 background:#555;
 
+margin-top:25px;
+
+padding:14px 35px;
+
+margin-bottom:30px;
 
 }
 
 
 
+/* CELULAR */
 
-.emoji{
-
-
-font-size:55px;
-
-margin-bottom:20px;
+@media(max-width:600px){
 
 
-animation:pulsar 1s infinite alternate;
+h1{
 
+font-size:26px;
 
 }
 
 
 
-@keyframes pulsar{
+.carta h2{
 
-
-from{
-
-transform:scale(1);
+font-size:28px;
 
 }
 
 
-to{
 
-transform:scale(1.2);
+.carta p{
+
+font-size:18px;
+
+line-height:1.7;
 
 }
+
+
+
+button{
+
+font-size:16px;
+
+}
+
 
 
 }
@@ -346,7 +384,9 @@ transform:scale(1.2);
 </head>
 
 
+
 <body>
+
 
 
 
@@ -364,7 +404,9 @@ transform:scale(1.2);
 
 
 
+
 <div class="container">
+
 
 
 <div class="emoji">
@@ -399,6 +441,7 @@ Preparei essa surpresa simples, mas feita com carinho pra você.
 
 
 
+
 <button onclick="abrirCarta()">
 
 Abrir Carta 💕
@@ -428,6 +471,7 @@ Abrir Carta 💕
 
 
 
+
 <h2>
 
 Meu amor,
@@ -436,25 +480,53 @@ Meu amor,
 
 
 
+
+
 <p>
 
 
 Sei que hoje é uma data especial, não só pelo dia dos namorados, mas também pelos 4 anos que estamos juntos.
-  
-Eu nunca fui muito bom com palavras, e às vezes posso parecer um pouco frio em alguns momentos. 
+
+
+<br><br>
+
+
+Eu nunca fui muito bom com palavras, e às vezes posso parecer um pouco frio em alguns momentos.
+
+
+<br><br>
+
 
 Mas independente de qualquer coisa, eu gostaria de te lembrar o quanto você é importante para mim.
-  
+
+
+<br><br>
+
+
 Cada momento, conversa e sorriso fazem parte de uma história que eu gosto muito de viver.
 
-Espero a gente ainda possa compartilhar muitos momentos de felicidade juntos, pois você é tudo pra mim.
+
+<br><br>
+
+
+Espero que a gente ainda possa compartilhar muitos momentos de felicidade juntos, pois você é tudo pra mim.
+
+
+<br><br>
+
 
 Obrigado por tudo.
+
+
+<br><br>
+
 
 Te amo, tá?! ❤️
 
 
 </p>
+
+
 
 
 
@@ -502,6 +574,7 @@ document
 
 
 </script>
+
 
 
 
